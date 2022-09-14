@@ -119,8 +119,6 @@ const start = () => {
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
-    // three Number bug
-    console.log(count);
     count--;
   }, 1000);
 };
@@ -134,7 +132,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent = parseInt((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
